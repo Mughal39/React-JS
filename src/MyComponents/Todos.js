@@ -1,3 +1,4 @@
+import { getRoles } from '@testing-library/dom';
 import React from 'react'
 import {TodoItem} from "../MyComponents/TodoItem";
 
@@ -8,8 +9,12 @@ export const Todos = ({todos, onDelete}) => {
 
             {todos.length === 0? "NO Todos to display ":
             todos.map((todo)=>{
-                return <TodoItem todo={todo} key={todo.sno} onDelete={onDelete}/>
-                })
+                return(
+                <>
+                 <TodoItem todo={todo} key={todo.sno} onDelete={onDelete}/><hr/>
+                </>
+                )
+            })
             }
             
         </div>
